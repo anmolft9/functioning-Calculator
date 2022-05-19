@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(107, 64, 64, 0.63) 0%,
+    rgba(91, 105, 50, 0) 100%
+  );
+
+  position: relative;
+}
+
+.container {
+  /* width: 50rem; */
+
+  display: grid;
+  grid-gap: 0.5em;
+
+  border-radius: 5px;
+  background: linear-gradient(
+    180deg,
+    rgba(156, 225, 240, 0.337) 0%,
+    rgba(91, 105, 50, 0) 100%
+  );
+
+  z-index: 10;
+  backdrop-filter: blur(5px);
+
+  width: 350px;
+
+  margin: 300px;
+  padding: 30px;
+
+  grid-template-areas:
+    "main main main main"
+    "itemPower itemPercent itemAC itemSwitch "
+    "item7 item8 item9 itemDivide"
+    "item4 item5 item6 itemSubtract"
+    "item1 item2 item3 itemPlus"
+    "item0 itemDot itemMulti itemEquals";
+}
+
+.Main {
+  height: 50px;
+  font-size: 30px;
+
+  grid-area: main;
+}
+.container > div {
+  cursor: pointer;
+  border-radius: 10px;
+  background: #afe4ef;
+}
+.container > div:hover {
+  cursor: pointer;
+  background: rgb(153, 57, 57);
+  color: white;
+}
+
+.item-1 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item1;
+}
+
+.item-2 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item2;
+}
+.item-3 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item3;
+}
+.item-4 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item4;
+}
+.item-5 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item5;
+}
+.item-6 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item6;
+}
+.item-7 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item7;
+}
+.item-8 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item8;
+}
+.item-9 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item9;
+}
+.item-10 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: item0;
+}
+.item-11 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemPlus;
+}
+.item-12 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemEquals;
+}
+.item-13 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemMulti;
+}
+.item-14 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemPercent;
+}
+.item-15 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemPower;
+}
+.item-16 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemAC;
+}
+.item-17 {
+  height: 7vh;
+  /* background: rgba(166, 244, 159, 1); */
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemSwitch;
+}
+
+.item-18 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemDivide;
+}
+.item-19 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemDot;
+}
+.item-20 {
+  height: 7vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: itemSubtract;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  left: 600px;
+  top: -80px;
+
+  border-radius: 50%;
+  background: rgba(189, 101, 101, 1);
+
+  position: absolute;
+}
+
+.container > div:active {
+  box-shadow: #afe4ef;
+  transform: translateY(4px);
+}
