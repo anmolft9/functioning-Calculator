@@ -70,14 +70,14 @@ buttonsArg.map((btn) => {
     // console.log(strToDisplay);
   });
 });
-
+///////////////////////////////////////////////////////////////////////////
 ////////function to display the string on the display
 const displays = (str) => {
   // display.innerText=str;
   display.value = str || "0";
 };
 
-/////function fro totaling the values after = is invoked
+/////function for totaling the values after = is invoked
 const total = () => {
   const ttl = eval(strToDisplay);
   displays(ttl);
