@@ -13,6 +13,12 @@ buttonsArg.map((btn) => {
   btn.addEventListener("click", () => {
     const val = btn.innerText;
 
+    ///turn on and off
+    if (val === "off") {
+      //   strdisplay = "";
+      off();
+    }
+
     ///clear the display
     if (val === "AC") {
       strToDisplay = "";
@@ -77,6 +83,9 @@ const displays = (str) => {
   display.value = str || "0";
 };
 
+const off = () => {
+  display.value = "";
+};
 /////function for totaling the values after = is invoked
 const total = () => {
   const ttl = eval(strToDisplay);
