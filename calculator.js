@@ -28,7 +28,7 @@ buttonsArg.map((btn) => {
 
     //////equals to
     if (val === "=") {
-      ///to ignore the last operator is present and display the rest of the calculated value
+      ///to ignore the last operator if present and display the rest of the calculated value
       const lastChar = strToDisplay[strToDisplay.length - 1];
       if (operators.includes(lastChar)) {
         strToDisplay = strToDisplay.slice(0, -1);
@@ -36,7 +36,7 @@ buttonsArg.map((btn) => {
       return total(); ///displaying the total
     }
 
-    /////clear the last number
+    /////clear the last value
     if (val === "C") {
       strToDisplay = strToDisplay.slice(0, -1);
       return displays(strToDisplay);
@@ -70,7 +70,7 @@ buttonsArg.map((btn) => {
 
     // console.log(val);
 
-    strToDisplay += val;
+    strToDisplay += val; ////to show the contatinated value on the display
 
     displays(strToDisplay);
     // console.log(strToDisplay);
@@ -83,9 +83,9 @@ const displays = (str) => {
   display.value = str || "0";
 };
 
-const off = () => {
-  display.value = "";
-};
+// const off = () => {
+//   display.value = "";
+// };
 /////function for totaling the values after = is invoked
 const total = () => {
   const ttl = eval(strToDisplay);
