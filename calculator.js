@@ -14,10 +14,10 @@ buttonsArg.map((btn) => {
     const val = btn.innerText;
 
     ///turn on and off
-    if (val === "off") {
-      //   strdisplay = "";
-      off();
-    }
+    // if (val === "off") {
+    //   //   strdisplay = "";
+    //   off();
+    // }
 
     ///clear the display
     if (val === "AC") {
@@ -42,7 +42,8 @@ buttonsArg.map((btn) => {
       return displays(strToDisplay);
     }
 
-    /////for operators
+    /////for operators to include only one operator in one numberset
+    debugger;
     if (operators.includes(val)) {
       lastOperator = val;
       const lastChar = strToDisplay[strToDisplay.length - 1];
@@ -55,6 +56,8 @@ buttonsArg.map((btn) => {
     }
 
     if (val === ".") {
+      debugger;
+
       if (lastOperator) {
         const operatorIndex = strToDisplay.lastIndexOf(lastOperator); ///last index of the string on the display
 
