@@ -1,35 +1,79 @@
 const buttons = document.querySelectorAll(".container>div");
-const display = document.querySelector(".Main");
 
-const buttonsArg = Array.from(buttons);
+const arr = Array.from(buttons);
 
-let stringCon = "";
+const displays = document.querySelector(".Main");
+let strToDisplay = "";
 
-buttonsArg.map((btn) => {
+let operators = ["+", "-", "*", "/"];
+let lastOperator = "";
+
+arr.map((btn) => {
   btn.addEventListener("click", () => {
-    const val = btn.innerText;
-    stringCon = stringCon + val;
-    
-    // displays(stringCon);
+    val = btn.innerText;
 
+    //totaling
     if (val === "=") {
-      return ttl();
+      const lastOp = strToDisplay[strToDisplay.length - 1];
+      if (operators.includes(lastOp)) {
+        strToDisplay = strToDisplay.slice(0, -1);
+      }
+
+      return total();
     }
 
-    // const total = eval(display.value);
+    //clear display
+    if (val === "AC") {
+      strToDisplay = "";
+      display(strToDisplay);
+      return;
+    }
 
-    // console.log(stringCon);
+    //delete the last char
+    if (val === "C") {
+      strToDisplay = strToDisplay.slice(0, -1);
+      return display(strToDisplay);
+    }
+
+    //operators
+    if (operators.includes(val)) {
+      lastOperator = val;
+      const lastOpe = strToDisplay[strToDisplay.length - 1];
+      if (operators.includes(lastOpe)) {
+        strToDisplay = strToDisplay.slice(0, -1);
+        strToDisplay += val;
+        return display(strToDisplay);
+      }
+    }
+
+    //for dot operator
+    if (val === ".") {
+      if (lastOperator) {
+        const operatorIndex = strToDisplay.indexOf(lastOperator);
+        const numberset = strToDisplay.slice(operatorIndex);
+        if (numberset.includes(".")) {
+          return;
+        }
+      }
+      if (!lastOperator && strToDisplay.includes(".")) {
+        return;
+      }
+    }
+
+    strToDisplay += val;
+    display(strToDisplay);
   });
 });
 
-//function to display on the screen
-const displays = (str) => {
-  display.value = str;
+//to diusplay
+
+const display = (str) => {
+  displays.value = str || 0;
 };
 
-///function to calculate the value
-const ttl = () => {
-  const total = eval(stringCon);
-  displays(total);
-  //   console.log(total);
+//totaling
+const total = () => {
+  const ttl = eval(strToDisplay);
+  display(ttl);
+  strToDisplay = ttl.toString();
 };

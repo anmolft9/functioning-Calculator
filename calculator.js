@@ -43,7 +43,7 @@ buttonsArg.map((btn) => {
     }
 
     /////for operators to include only one operator in one numberset
-    debugger;
+    // debugger;
     if (operators.includes(val)) {
       lastOperator = val;
       const lastChar = strToDisplay[strToDisplay.length - 1];
@@ -59,7 +59,7 @@ buttonsArg.map((btn) => {
       debugger;
 
       if (lastOperator) {
-        const operatorIndex = strToDisplay.lastIndexOf(lastOperator); ///last index of the string on the display
+        const operatorIndex = strToDisplay.lastIndexOf(lastOperator); ///last index of the operator from the display
 
         const lastNumberSet = strToDisplay.slice(operatorIndex + 1);
 
@@ -72,10 +72,12 @@ buttonsArg.map((btn) => {
     }
 
     // console.log(val);
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    strToDisplay += val; ////to show the contatinated value on the display
+    strToDisplay += val; ////to show the concatinated value on the display
 
     displays(strToDisplay);
+
     // console.log(strToDisplay);
   });
 });
